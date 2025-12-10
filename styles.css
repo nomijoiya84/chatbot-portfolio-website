@@ -1513,18 +1513,38 @@ section {
 }
 
 /* === Responsive Design === */
-@media (max-width: 992px) {
+
+/* Large Tablets and Small Laptops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
     .about-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 40px;
+    }
+
+    .about-image {
+        order: -1;
     }
 
     .about-highlights {
         justify-content: center;
     }
 
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .contact-content {
         grid-template-columns: 1fr;
+        gap: 40px;
     }
 
     .contact-info {
@@ -1534,11 +1554,12 @@ section {
 
     .info-card {
         flex: 1;
-        min-width: 150px;
+        min-width: 180px;
     }
 
     .footer-content {
         grid-template-columns: 1fr 1fr;
+        gap: 40px;
     }
 
     .footer-brand {
@@ -1546,102 +1567,688 @@ section {
     }
 }
 
+/* Tablets */
 @media (max-width: 768px) {
+
+    /* === Navigation Mobile Menu === */
     .nav-links {
         display: none;
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
-        background: var(--bg-secondary);
-        border-top: 1px solid var(--border-color);
+        bottom: 0;
+        background: rgba(10, 15, 15, 0.98);
+        backdrop-filter: blur(20px);
         flex-direction: column;
-        padding: 20px;
-        gap: 16px;
+        padding: 100px 40px 40px;
+        gap: 0;
+        z-index: 999;
+        animation: slideInFromRight 0.3s ease;
+    }
+
+    @keyframes slideInFromRight {
+        from {
+            transform: translateX(100%);
+            opacity: 0;
+        }
+
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
 
     .nav-links.active {
         display: flex;
     }
 
+    .nav-links li {
+        border-bottom: 1px solid var(--border-color);
+        width: 100%;
+    }
+
+    .nav-links li:last-child {
+        border-bottom: none;
+        margin-top: 20px;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 20px 0;
+        font-size: 1.2rem;
+        font-weight: 500;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: var(--accent-teal);
+        transform: translateX(10px);
+    }
+
+    .nav-links .nav-cta {
+        width: 100%;
+        text-align: center;
+        padding: 16px 32px !important;
+    }
+
     .mobile-menu-btn {
         display: flex;
+        z-index: 1001;
+        position: relative;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(10px);
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* === Hero Section Mobile === */
+    .hero {
+        padding: 100px 0 60px;
+        min-height: auto;
+    }
+
+    .hero-badge {
+        font-size: 0.8rem;
+        padding: 6px 14px;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 16px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+        gap: 12px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        justify-content: center;
     }
 
     .hero-stats {
-        gap: 24px;
+        gap: 20px;
+        flex-wrap: nowrap;
+        justify-content: space-around;
     }
 
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+    }
+
+    .hero-scroll-indicator {
+        display: none;
+    }
+
+    /* === Sections Mobile === */
     section {
         padding: 60px 0;
     }
 
-    .portfolio-grid {
-        grid-template-columns: 1fr;
+    .section-header {
+        margin-bottom: 40px;
     }
 
+    .section-label {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+    }
+
+    /* === Services Mobile === */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 24px;
+    }
+
+    .service-icon {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 16px;
+    }
+
+    .service-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .service-card p {
+        font-size: 0.9rem;
+    }
+
+    /* === Process Mobile === */
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .process-step {
+        padding: 24px;
+    }
+
+    .step-number {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+
+    .step-content h3 {
+        font-size: 1.1rem;
+    }
+
+    /* === Portfolio Mobile === */
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .portfolio-image {
+        height: 180px;
+    }
+
+    .portfolio-content {
+        padding: 20px;
+    }
+
+    .portfolio-content h3 {
+        font-size: 1.1rem;
+    }
+
+    /* === Pricing Mobile === */
     .pricing-grid {
         grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .pricing-card {
+        padding: 32px 24px;
+    }
+
+    .pricing-card.featured {
+        order: -1;
+    }
+
+    .pricing-badge {
+        font-size: 0.75rem;
+        padding: 5px 16px;
+    }
+
+    .pricing-header {
+        margin-bottom: 24px;
+    }
+
+    .pricing-header h3 {
+        font-size: 1.3rem;
+    }
+
+    .amount {
+        font-size: 2.5rem;
+    }
+
+    .currency {
+        font-size: 1.2rem;
+    }
+
+    .pricing-features li {
+        padding: 10px 0;
+        font-size: 0.9rem;
+    }
+
+    /* === Testimonials Mobile === */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testimonial-card {
+        padding: 24px;
+    }
+
+    .testimonial-text {
+        font-size: 0.95rem;
+    }
+
+    /* === FAQ Mobile === */
+    .faq-list {
+        padding: 0;
+    }
+
+    .faq-question {
+        padding: 16px 20px;
+        font-size: 0.95rem;
+    }
+
+    .faq-answer p {
+        padding: 0 20px 16px;
+        font-size: 0.9rem;
+    }
+
+    /* === Contact Mobile === */
+    .contact-form {
+        padding: 24px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 12px 14px;
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .info-card {
+        padding: 20px;
+    }
+
+    /* === Footer Mobile === */
+    .footer {
+        padding: 40px 0 24px;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
         gap: 30px;
+        text-align: center;
     }
 
     .footer-brand {
         grid-column: span 1;
     }
 
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-links ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .footer-links li {
+        margin-bottom: 0;
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* === Chatbot Widget Mobile === */
+    .chatbot-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .chatbot-toggle {
+        width: 56px;
+        height: 56px;
+    }
+
+    .chatbot-toggle svg {
+        width: 24px;
+        height: 24px;
+    }
+
     .chatbot-window {
-        width: calc(100vw - 48px);
-        right: -12px;
-        max-height: 70vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        max-height: 100%;
+        border-radius: 0;
+    }
+
+    .chatbot-header {
+        border-radius: 0;
+        padding: 20px;
+    }
+
+    .chatbot-messages {
+        padding: 16px;
+    }
+
+    .chatbot-input {
+        border-radius: 0;
+        padding: 12px 16px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom, 0));
+    }
+
+    .chatbot-input input {
+        padding: 14px 18px;
+        font-size: 16px;
+    }
+
+    /* === Floating Buttons Mobile === */
+    .whatsapp-float {
+        bottom: 90px;
+        right: 16px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .whatsapp-float svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .whatsapp-float .tooltip {
+        display: none;
+    }
+
+    .scroll-to-top {
+        bottom: 160px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .scroll-to-top svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Adjust floating buttons when chatbot is open */
+    .chatbot-widget.open~.whatsapp-float,
+    .chatbot-widget.open~.scroll-to-top {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
     }
 }
 
+/* Small Mobile Devices */
 @media (max-width: 480px) {
     .container {
         padding: 0 16px;
     }
 
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
+    /* === Navigation Extra Small === */
+    .logo-text {
         font-size: 1rem;
     }
 
-    .section-title {
-        font-size: 1.75rem;
+    .logo-icon {
+        font-size: 1.25rem;
     }
 
-    .btn {
-        padding: 12px 24px;
+    /* === Hero Extra Small === */
+    .hero {
+        padding: 90px 0 50px;
+    }
+
+    .hero-title {
+        font-size: 1.85rem;
+    }
+
+    .hero-subtitle {
         font-size: 0.95rem;
     }
 
+    .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .stat {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .stat-number {
+        font-size: 1.75rem;
+    }
+
+    .stat-label {
+        font-size: 0.85rem;
+    }
+
+    /* === Section Titles Extra Small === */
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* === Buttons Extra Small === */
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .btn-arrow {
+        width: 16px;
+        height: 16px;
+    }
+
+    /* === About Extra Small === */
+    .about-avatar {
+        width: 150px;
+        height: 150px;
+        font-size: 2.5rem;
+    }
+
+    .image-glow {
+        width: 180px;
+        height: 180px;
+    }
+
+    .about-text p {
+        font-size: 0.95rem;
+    }
+
+    .about-highlights {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .highlight {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px;
+    }
+
+    /* === Cards Extra Small === */
     .service-card,
     .pricing-card,
-    .testimonial-card {
-        padding: 24px;
+    .testimonial-card,
+    .process-step {
+        padding: 20px;
     }
 
+    /* === Pricing Extra Small === */
+    .amount {
+        font-size: 2.25rem;
+    }
+
+    /* === Contact Extra Small === */
     .contact-form {
-        padding: 24px;
+        padding: 20px;
     }
 
-    .contact-info {
-        flex-direction: column;
+    .info-icon {
+        font-size: 1.5rem;
+    }
+
+    /* === Chatbot Extra Small === */
+    .chatbot-toggle {
+        width: 52px;
+        height: 52px;
+    }
+
+    .quick-reply {
+        padding: 8px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+/* === Touch Device Optimizations === */
+@media (hover: none) and (pointer: coarse) {
+
+    /* Larger touch targets */
+    .nav-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        min-height: 48px;
+    }
+
+    .faq-question {
+        min-height: 56px;
+    }
+
+    .quick-reply {
+        min-height: 44px;
+    }
+
+    /* Remove hover effects that don't work well on touch */
+    .service-card:hover,
+    .process-step:hover,
+    .portfolio-card:hover,
+    .pricing-card:hover,
+    .testimonial-card:hover,
+    .faq-item:hover,
+    .info-card:hover {
+        transform: none;
+    }
+
+    /* Active states for touch */
+    .btn:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+
+    .service-card:active,
+    .portfolio-card:active,
+    .pricing-card:active {
+        border-color: var(--border-glow);
+    }
+
+    .quick-reply:active {
+        background: var(--bg-card);
+        border-color: var(--accent-teal);
+    }
+}
+
+/* === Landscape Mode on Mobile === */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 80px 0 40px;
+    }
+
+    .hero-stats {
+        flex-direction: row;
+    }
+
+    .chatbot-window {
+        height: 100vh;
+        max-height: 100vh;
+    }
+
+    .chatbot-messages {
+        max-height: 40vh;
+    }
+}
+
+/* === Safe Area Insets for Notched Devices === */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .footer-bottom {
+        padding-bottom: calc(30px + env(safe-area-inset-bottom));
+    }
+
+    .chatbot-input {
+        padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    }
+
+    .whatsapp-float {
+        bottom: calc(90px + env(safe-area-inset-bottom));
+    }
+
+    .chatbot-widget {
+        bottom: calc(16px + env(safe-area-inset-bottom));
+    }
+
+    .scroll-to-top {
+        bottom: calc(160px + env(safe-area-inset-bottom));
+    }
+}
+
+/* === Reduced Motion for Accessibility === */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .hero-bg-animation {
+        animation: none;
+    }
+
+    .whatsapp-float {
+        animation: none;
+    }
+
+    .chatbot-toggle {
+        animation: none;
     }
 }
