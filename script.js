@@ -18,12 +18,24 @@ document.addEventListener('DOMContentLoaded', () => {
 /* === Navbar Scroll Effect === */
 function initNavbar() {
     const navbar = document.getElementById('navbar');
+    const promoBanner = document.querySelector('.promo-banner');
+
+    if (!navbar) return;
 
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
+        }
+
+        // Hide/show promo banner based on scroll
+        if (promoBanner) {
+            if (window.scrollY > 100) {
+                promoBanner.classList.add('hidden');
+            } else {
+                promoBanner.classList.remove('hidden');
+            }
         }
     });
 
@@ -53,6 +65,7 @@ function initNavbar() {
     });
 }
 
+// ... scroll animations ...
 /* === Scroll Animations === */
 function initScrollAnimations() {
     const observerOptions = {
@@ -102,56 +115,71 @@ function initContactForm() {
     const form = document.getElementById('contactForm');
 
     if (form) {
-        // Set Formspree endpoint - replace with your actual Formspree ID
-        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xpwzgvqp'; // Replace with your Formspree ID
+        // Set Formspree endpoint
+        const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mpwvewgz';
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const submitBtn = form.querySelector('button[type="submit"]');
+            const submitBtn = form.querySelector('button[type="submit]');
             const originalText = submitBtn.innerHTML;
+            const formData = new FormData(form);
 
             // Show loading state
             submitBtn.innerHTML = '<span>Sending...</span>';
             submitBtn.disabled = true;
 
-            // Collect form data
-            const formData = new FormData(form);
+            // Helper to handle success UI
+            const showSuccess = () => {
+                submitBtn.innerHTML = '<span>Message Sent! ✓</span>';
+                submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                form.reset();
+                showFormNotification('Message sent successfully!', 'success');
 
+                // Reset button after delay
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            };
+
+            // Helper to handle error UI
+            const showError = (msg) => {
+                submitBtn.innerHTML = '<span>Error! Try Again</span>';
+                submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+                showFormNotification(msg, 'error');
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            };
+
+            // Real submission attempt
             try {
-                // Send to Formspree
                 const response = await fetch(FORMSPREE_ENDPOINT, {
                     method: 'POST',
                     body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                    headers: { 'Accept': 'application/json' }
                 });
 
                 if (response.ok) {
-                    // Show success message
-                    submitBtn.innerHTML = '<span>Message Sent! ✓</span>';
-                    submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-                    form.reset();
-
-                    // Show success notification
-                    showFormNotification('Thanks for reaching out! I\'ll get back to you within 24 hours.', 'success');
+                    showSuccess();
                 } else {
-                    throw new Error('Form submission failed');
+                    const data = await response.json();
+                    if (data.errors) {
+                        throw new Error(data.errors.map(error => error.message).join(", "));
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
                 }
             } catch (error) {
-                // Show error message
-                submitBtn.innerHTML = '<span>Error! Try Again</span>';
-                submitBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
-                showFormNotification('Oops! Something went wrong. Please try again or contact via WhatsApp.', 'error');
-            }
+                console.error('Form Error:', error);
 
-            // Reset button after delay
-            setTimeout(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.style.background = '';
-                submitBtn.disabled = false;
-            }, 3000);
+                showError('Oops! Sending failed. Please check your internet or try again later.');
+            }
         });
     }
 }
@@ -277,11 +305,26 @@ function initChatbot() {
     const form = document.getElementById('chatbotForm');
     const input = document.getElementById('chatInput');
     const notificationSound = document.getElementById('chatNotificationSound');
+    const promoBadge = document.getElementById('promoBadge');
 
     // Safety check - if chatbot elements don't exist, exit early
     if (!widget || !toggle || !messagesContainer || !form || !input) {
         console.warn('Chatbot: Required DOM elements not found, skipping initialization');
         return;
+    }
+
+    // Handle Promo Badge Click
+    if (promoBadge) {
+        promoBadge.addEventListener('click', () => {
+            // Open chatbot if not already open
+            if (!widget.classList.contains('open')) {
+                toggle.click(); // Use the existing toggle button click handler
+            }
+            // Focus on input field
+            setTimeout(() => {
+                input.focus();
+            }, 300);
+        });
     }
 
     // ========== LOCAL STORAGE KEYS ==========
@@ -524,17 +567,17 @@ function initChatbot() {
             keywords: ['price', 'cost', 'pricing', 'how much', 'rate', 'charge', 'fee', 'budget', 'affordable', 'cheap', 'expensive', 'money', 'pay', 'payment', 'pricng', 'prcing'],
             response: `Great question! Here's my transparent pricing:
 
-💼 **Starter Package** - $49
+💼 **Starter Package** - $39
 • Basic FAQ chatbot (up to 20 responses)
 • Website integration
-• 14 days email support
+• 7 days email support
 
-⭐ **Professional Package** - $149 (Most Popular!)
+⭐ **Professional Package** - $89 (Most Popular!)
 • Advanced AI-powered bot
 • WhatsApp + Website integration
 • Up to 100 smart responses
 • CRM integration
-• 30 days priority support
+• 14 days priority support
 
 🏢 **Enterprise** - Custom Quote
 • Unlimited capabilities
@@ -565,9 +608,9 @@ What type of chatbot are you looking to build?`,
             keywords: ['time', 'long', 'days', 'week', 'deadline', 'duration', 'fast', 'quick', 'urgent', 'asap', 'deliver', 'when', 'ready', 'complete', 'finish'],
             response: `Here's my typical delivery timeline:
 
-⚡ **Basic FAQ Bot**: 3-5 days
+⚡ **Basic FAQ Bot**: 1-3 days
 🔧 **AI-Powered Bot**: 1-2 weeks  
-🏗️ **Enterprise Solution**: 2-4 weeks
+🏗️ **Enterprise Solution**: 2+ weeks
 
 **Timeline includes:**
 ✅ Initial consultation
@@ -655,7 +698,7 @@ Scroll down to see the full portfolio!`,
 🏠 Real Estate
 🎓 Education & Training
 
-Included in **Professional Package** ($149)!`,
+Included in **Professional Package** ($89)!`,
             quickReplies: ['💰 WhatsApp Bot Pricing', '🔧 Custom Features', '📞 Get Started', '⏱️ Delivery Time']
         },
 
@@ -664,8 +707,8 @@ Included in **Professional Package** ($149)!`,
             response: `I provide comprehensive support! 🛡️
 
 **Included Support:**
-📦 Starter ($49): 14 days email support
-⭐ Professional ($149): 30 days priority support  
+📦 Starter ($39): 7 days email support
+⭐ Professional ($89): 14 days priority support  
 🏢 Enterprise: Ongoing dedicated support
 
 **What's Covered:**
@@ -1192,17 +1235,45 @@ Need a bot in multiple languages? No problem!`,
         scrollToBottom();
     }
 
-    // ========== TOGGLE CHATBOT ==========
-    toggle.addEventListener('click', () => {
-        widget.classList.toggle('open');
-        if (widget.classList.contains('open')) {
+    // ========== TOGGLE CHATBOT WITH HISTORY ==========
+    const handleToggle = () => {
+        const isOpen = widget.classList.contains('open');
+
+        if (isOpen) {
+            // If dragging history or simple open, check state
+            if (history.state && history.state.chatbotOpen) {
+                history.back();
+            } else {
+                widget.classList.remove('open');
+            }
+        } else {
+            history.pushState({ chatbotOpen: true }, '', '');
+            widget.classList.add('open');
             input.focus();
+
             // Show welcome message quick replies if first time
             if (context.messageCount === 0) {
                 setTimeout(() => {
                     addQuickReplies(['🔧 View Services', '💰 Pricing', '📂 Portfolio', '💬 Start Project']);
                 }, 500);
             }
+        }
+    };
+
+    toggle.addEventListener('click', handleToggle);
+
+    // Initial check for open state
+    if (history.state && history.state.chatbotOpen) {
+        widget.classList.add('open');
+    }
+
+    // Handle browser back button
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.chatbotOpen) {
+            widget.classList.add('open');
+            input.focus();
+        } else {
+            widget.classList.remove('open');
         }
     });
 
@@ -1578,14 +1649,9 @@ function initKeyboardShortcuts() {
         // Ctrl+K or Cmd+K to toggle chatbot
         if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
             e.preventDefault();
-            const widget = document.getElementById('chatbotWidget');
-            const input = document.getElementById('chatInput');
-
-            if (widget) {
-                widget.classList.toggle('open');
-                if (widget.classList.contains('open') && input) {
-                    input.focus();
-                }
+            const toggle = document.getElementById('chatbotToggle');
+            if (toggle) {
+                toggle.click(); // Use the existing click handler which manages history
             }
         }
 
@@ -1593,7 +1659,11 @@ function initKeyboardShortcuts() {
         if (e.key === 'Escape') {
             const widget = document.getElementById('chatbotWidget');
             if (widget && widget.classList.contains('open')) {
-                widget.classList.remove('open');
+                if (history.state && history.state.chatbotOpen) {
+                    history.back();
+                } else {
+                    widget.classList.remove('open');
+                }
             }
         }
     });
