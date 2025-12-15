@@ -1238,6 +1238,19 @@ section {
     font-size: 0.95rem;
 }
 
+.info-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+}
+
+.info-link:hover {
+    color: var(--accent-teal);
+    border-bottom-color: var(--accent-teal);
+}
+
 /* === Footer === */
 .footer {
     background: var(--bg-secondary);

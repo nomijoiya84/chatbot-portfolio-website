@@ -830,8 +830,8 @@ Perfect for agents, brokers & developers!`,
 
 **What Sets Me Apart:**
 🎯 **Personalized Approach** - No cookie-cutter solutions
-💰 **Affordable Pricing** - Starting at just $49  
-🚀 **Fast Delivery** - Basic bots in 3-5 days
+💰 **Affordable Pricing** - Starting at just $39  
+🚀 **Fast Delivery** - Basic bots in 1-3 days
 🤖 **Latest AI Tech** - GPT-4, Claude, Gemini
 📱 **Multi-Platform** - Website, WhatsApp, Messenger
 🛠️ **Full Support** - I don't disappear after delivery
@@ -969,7 +969,7 @@ No pressure, no obligation - just a friendly chat! 😊`,
 
 I'm an AI assistant here to help you learn about:
 🤖 Custom chatbot solutions
-💰 Affordable pricing (from $49!)
+💰 Affordable pricing (from $39!)
 📱 WhatsApp & website bots
 🚀 Fast delivery
 
@@ -1011,7 +1011,7 @@ Take care and have a great day! 🌟`,
 
 Anything else you'd like to know about my chatbot services?
 
-• 💰 Pricing starts at $49
+• 💰 Pricing starts at $39
 • ⏱️ Fast 3-5 day delivery
 • 📱 WhatsApp + Website bots
 • 🛡️ Support included
@@ -1405,7 +1405,7 @@ Need a bot in multiple languages? No problem!`,
                 `I'm not quite sure I understand, but I'm here to help! ${context.userName ? context.userName + ', ' : ''}Let me guide you:
 
 🔧 **Services** - What chatbot solutions I offer
-💰 **Pricing** - Affordable packages starting at $49
+💰 **Pricing** - Affordable packages starting at $39
 📱 **WhatsApp Bots** - Automate your business messaging
 📂 **Portfolio** - See my successful projects
 
