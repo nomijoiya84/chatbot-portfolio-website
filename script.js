@@ -121,7 +121,7 @@ function initContactForm() {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const submitBtn = form.querySelector('button[type="submit]');
+            const submitBtn = form.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
             const formData = new FormData(form);
 
