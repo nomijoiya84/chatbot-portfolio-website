@@ -552,6 +552,7 @@ function initChatbot() {
         // === CORE SERVICES ===
         services: {
             keywords: ['service', 'offer', 'provide', 'what do you', 'what can you', 'capabilities', 'specialize'],
+            keywordsUrdu: ['kya kaam', 'kya karte ho', 'kaam batao', 'service kya hai'],
             response: `I specialize in building intelligent chatbots that transform businesses! 🚀
 
 🌐 **Website Chatbots** - 24/7 customer engagement, FAQs, lead capture
@@ -560,11 +561,21 @@ function initChatbot() {
 🛒 **E-Commerce Bots** - Product recommendations, order tracking
 🏥 **Industry-Specific Bots** - Healthcare, Real Estate, Restaurants
 🔗 **Custom Integrations** - CRM, databases, payment systems, APIs`,
-            quickReplies: ['💰 View Pricing', '⏱️ Timeline', '📂 See Portfolio', '💬 Start Project']
+            responseUrdu: `Main intelligent chatbots banata hoon jo apka business barha sakte hain! 🚀
+
+🌐 **Website Chatbots** - 24/7 customer engagement
+📱 **WhatsApp Bots** - Business automation aur replies
+🤖 **AI Assistants** - GPT-4 powered smart baat cheet
+🛒 **E-Commerce Bots** - Order tracking aur product info
+
+Ap kis cheez ke liye chatbot chahte hain?`,
+            quickReplies: ['💰 View Pricing', '⏱️ Timeline', '📂 See Portfolio', '💬 Start Project'],
+            quickRepliesUrdu: ['💰 Pricing Dekhein', '⏱️ Waqt', '📂 Portfolio', '💬 Project Shuru']
         },
 
         pricing: {
             keywords: ['price', 'cost', 'pricing', 'how much', 'rate', 'charge', 'fee', 'budget', 'affordable', 'cheap', 'expensive', 'money', 'pay', 'payment', 'pricng', 'prcing'],
+            keywordsUrdu: ['kitne paise', 'kimat', 'paisa', 'kitna kharcha', 'charges kya hain', 'rate kya hai'],
             response: `Great question! Here's my transparent pricing:
 
 💼 **Starter Package** - $39
@@ -586,11 +597,27 @@ function initChatbot() {
 • Ongoing dedicated support
 
 💡 All prices are **one-time payments** - no monthly fees!`,
-            quickReplies: ['📱 WhatsApp Bot Details', '🔧 Custom Solution', '📞 Get Free Quote', '⏱️ Delivery Time']
+            responseUrdu: `Mera pricing clear aur transparent hai:
+
+💼 **Starter Package** - $39
+• Basic FAQ chatbot (20 sawalat tak)
+• Website integration
+• 7 din support
+
+⭐ **Professional Package** - $89 (Sab se behtareen!)
+• Advanced AI chatbot
+• WhatsApp + Website
+• 100 smart responses
+• 14 din support
+
+💡 Sab prices **one-time** hain - koi mahana fees nahi!`,
+            quickReplies: ['📱 WhatsApp Bot Details', '🔧 Custom Solution', '📞 Get Free Quote', '⏱️ Delivery Time'],
+            quickRepliesUrdu: ['📱 WhatsApp Bot', '🔧 Custom Kaam', '📞 Free Quote', '⏱️ Delivery Time']
         },
 
         contact: {
             keywords: ['contact', 'email', 'reach', 'hire', 'work with', 'get in touch', 'connect', 'call', 'phone', 'message'],
+            keywordsUrdu: ['rabta', 'baat karni hai', 'number do', 'kasil karun', 'contact kaise'],
             response: `I'd love to discuss your project! Here's how to reach me: 📬
 
 📧 **Email**: nomijoiya84@gmail.com
@@ -601,11 +628,21 @@ function initChatbot() {
 🌍 **Available**: Worldwide clients welcome!
 
 What type of chatbot are you looking to build?`,
-            quickReplies: ['🛒 E-commerce Bot', '🏥 Healthcare Bot', '🏠 Real Estate Bot', '📱 WhatsApp Bot']
+            responseUrdu: `Mujh se rabta karein, mujhe khushi hogi! 📬
+
+📧 **Email**: nomijoiya84@gmail.com
+💬 **WhatsApp**: +92 310 2824072 (Sab se jaldi!)
+📝 **Form**: Neeche form fill karein
+
+Main aam tor par 2-4 ghanton mein jawab deta hoon.
+Ap kis tarah ka chatbot banana chahte hain?`,
+            quickReplies: ['🛒 E-commerce Bot', '🏥 Healthcare Bot', '🏠 Real Estate Bot', '📱 WhatsApp Bot'],
+            quickRepliesUrdu: ['🛒 E-commerce Bot', '📱 WhatsApp Bot', '🏠 Real Estate Bot']
         },
 
         timeline: {
             keywords: ['time', 'long', 'days', 'week', 'deadline', 'duration', 'fast', 'quick', 'urgent', 'asap', 'deliver', 'when', 'ready', 'complete', 'finish'],
+            keywordsUrdu: ['kitna waqt', 'kab tak', 'der', 'jaldi', 'kab mile ga'],
             response: `Here's my typical delivery timeline:
 
 ⚡ **Basic FAQ Bot**: 1-3 days
@@ -621,7 +658,15 @@ What type of chatbot are you looking to build?`,
 🚀 **Rush delivery available** for urgent projects!
 
 Need something faster? Let me know your deadline!`,
-            quickReplies: ['🚀 Rush Delivery', '💰 Pricing Info', '📞 Book Consultation', '🔧 Custom Timeline']
+            responseUrdu: `Aam tor par itna waqt lagta hai:
+
+⚡ **Basic Bot**: 1-3 din
+🔧 **AI Bot**: 1-2 haftay
+🏗️ **Bara Project**: 2+ haftay
+
+Agar urgent hai toh mujhe batayein!`,
+            quickReplies: ['🚀 Rush Delivery', '💰 Pricing Info', '📞 Book Consultation', '🔧 Custom Timeline'],
+            quickRepliesUrdu: ['🚀 Jaldi Chahiye', '💰 Pricing', '📞 Baat Karein']
         },
 
         technologies: {
@@ -646,7 +691,8 @@ Need something faster? Let me know your deadline!`,
 • Firebase, MongoDB, PostgreSQL
 • Zapier, Make, custom APIs
 • Payment gateways (Stripe, PayPal)`,
-            quickReplies: ['📱 WhatsApp Bot', '🛒 E-commerce Bot', '🔧 Custom Integration', '💰 Pricing']
+            quickReplies: ['📱 WhatsApp Bot', '🛒 E-commerce Bot', '🔧 Custom Integration', '💰 Pricing'],
+            quickRepliesUrdu: ['📱 WhatsApp Bot', '🛒 E-commerce Bot', '🔧 Custom Kaam', '💰 Pricing']
         },
 
         portfolio: {
@@ -674,7 +720,8 @@ Need something faster? Let me know your deadline!`,
 • Customer satisfaction: 4.9/5
 
 Scroll down to see the full portfolio!`,
-            quickReplies: ['💰 Get Similar Bot', '📞 Discuss My Project', '🔧 Custom Solution', '⏱️ Timeline']
+            quickReplies: ['💰 Get Similar Bot', '📞 Discuss My Project', '🔧 Custom Solution', '⏱️ Timeline'],
+            quickRepliesUrdu: ['💰 Aisa Bot Chahiye', '📞 Project Baat Karein', '🔧 Custom Kaam', '⏱️ Waqt']
         },
 
         whatsapp: {
@@ -699,7 +746,8 @@ Scroll down to see the full portfolio!`,
 🎓 Education & Training
 
 Included in **Professional Package** ($89)!`,
-            quickReplies: ['💰 WhatsApp Bot Pricing', '🔧 Custom Features', '📞 Get Started', '⏱️ Delivery Time']
+            quickReplies: ['💰 WhatsApp Bot Pricing', '🔧 Custom Features', '📞 Get Started', '⏱️ Delivery Time'],
+            quickRepliesUrdu: ['💰 WhatsApp Pricing', '🔧 Custom Features', '📞 Shuru Karein', '⏱️ Waqt']
         },
 
         support: {
@@ -723,7 +771,8 @@ Included in **Professional Package** ($89)!`,
 • Priority support extensions
 
 All issues within the support period are fixed **100% free**!`,
-            quickReplies: ['💰 Pricing Details', '📞 Contact Me', '🔧 Maintenance Plans', '📂 See Portfolio']
+            quickReplies: ['💰 Pricing Details', '📞 Contact Me', '🔧 Maintenance Plans', '📂 See Portfolio'],
+            quickRepliesUrdu: ['💰 Pricing', '📞 Rabta Karein', '🔧 Maintenance', '📂 Portfolio']
         },
 
         // === INDUSTRY-SPECIFIC BOTS ===
@@ -749,7 +798,8 @@ All issues within the support period are fixed **100% free**!`,
 • 40% increase in conversions
 • 60% reduction in support tickets
 • 24/7 automated assistance`,
-            quickReplies: ['💰 E-commerce Bot Price', '📂 See Case Study', '📞 Discuss Project', '⏱️ Timeline']
+            quickReplies: ['💰 E-commerce Bot Price', '📂 See Case Study', '📞 Discuss Project', '⏱️ Timeline'],
+            quickRepliesUrdu: ['💰 Price Dekhein', '📂 Case Study', '📞 Baat Karein', '⏱️ Waqt']
         },
 
         healthcare: {
@@ -772,7 +822,8 @@ All issues within the support period are fixed **100% free**!`,
 • Improve patient satisfaction
 
 I've built bots handling 500+ bookings daily!`,
-            quickReplies: ['💰 Healthcare Bot Pricing', '📂 See Medical Case Study', '📞 Discuss Project', '🔒 HIPAA Compliance']
+            quickReplies: ['💰 Healthcare Bot Pricing', '📂 See Medical Case Study', '📞 Discuss Project', '🔒 HIPAA Compliance'],
+            quickRepliesUrdu: ['💰 Price Dekhein', '📂 Case Study', '📞 Baat Karein', '🔒 HIPAA Info']
         },
 
         realestate: {
@@ -795,7 +846,8 @@ I've built bots handling 500+ bookings daily!`,
 • Capture leads even at 3 AM!
 
 Perfect for agents, brokers & developers!`,
-            quickReplies: ['💰 Real Estate Bot Price', '📂 See Case Study', '📞 Discuss Project', '🔧 Custom Features']
+            quickReplies: ['💰 Real Estate Bot Price', '📂 See Case Study', '📞 Discuss Project', '🔧 Custom Features'],
+            quickRepliesUrdu: ['💰 Price Dekhein', '📂 Case Study', '📞 Baat Karein', '🔧 Custom Kaam']
         },
 
         restaurant: {
@@ -820,7 +872,8 @@ Perfect for agents, brokers & developers!`,
 • 30% increase in online orders
 • Zero missed reservations
 • Improved customer experience`,
-            quickReplies: ['💰 Restaurant Bot Price', '📱 WhatsApp Ordering', '📞 Discuss Project', '⏱️ Timeline']
+            quickReplies: ['💰 Restaurant Bot Price', '📱 WhatsApp Ordering', '📞 Discuss Project', '⏱️ Timeline'],
+            quickRepliesUrdu: ['💰 Price Dekhein', '📱 WhatsApp Order', '📞 Baat Karein', '⏱️ Waqt']
         },
 
         // === COMPARISON & VALUE ===
@@ -843,7 +896,8 @@ Perfect for agents, brokers & developers!`,
 ✅ Post-launch support included
 
 Ready to experience the difference?`,
-            quickReplies: ['💰 View Pricing', '📂 See Portfolio', '📞 Let\'s Talk', '⏱️ Timeline']
+            quickReplies: ['💰 View Pricing', '📂 See Portfolio', '📞 Let\'s Talk', '⏱️ Timeline'],
+            quickRepliesUrdu: ['💰 Pricing', '📂 Portfolio', '📞 Baat Karein', '⏱️ Waqt']
         },
 
         experience: {
@@ -866,7 +920,8 @@ Ready to experience the difference?`,
 "I don't just build chatbots - I create conversation experiences that drive real business results."
 
 Available for projects worldwide! 🌐`,
-            quickReplies: ['📂 See Portfolio', '💰 Pricing', '📞 Contact Me', '🔧 Custom Project']
+            quickReplies: ['📂 See Portfolio', '💰 Pricing', '📞 Contact Me', '🔧 Custom Project'],
+            quickRepliesUrdu: ['📂 Portfolio', '💰 Pricing', '📞 Rabta Karein', '🔧 Custom Project']
         },
 
         // === PAYMENT & PROCESS ===
@@ -891,7 +946,8 @@ Available for projects worldwide! 🌐`,
 ✅ Revisions until you're happy
 
 No hidden fees - what I quote is what you pay!`,
-            quickReplies: ['💰 Get Quote', '📞 Discuss Payment', '🔧 Project Details', '⏱️ Timeline']
+            quickReplies: ['💰 Get Quote', '📞 Discuss Payment', '🔧 Project Details', '⏱️ Timeline'],
+            quickRepliesUrdu: ['💰 Quote Lein', '📞 Payment Baat', '🔧 Project Detail', '⏱️ Waqt']
         },
 
         process: {
@@ -919,7 +975,8 @@ No hidden fees - what I quote is what you pay!`,
 🛡️ Support period begins
 
 Ready to start? Let's chat! 💬`,
-            quickReplies: ['📞 Book Free Consultation', '💰 Get Quote', '⏱️ Timeline', '📂 Portfolio']
+            quickReplies: ['📞 Book Free Consultation', '💰 Get Quote', '⏱️ Timeline', '📂 Portfolio'],
+            quickRepliesUrdu: ['📞 Free Mashwara', '💰 Quote Lein', '⏱️ Waqt', '📂 Portfolio']
         },
 
         revision: {
@@ -939,7 +996,8 @@ Ready to start? Let's chat! 💬`,
 
 **My Promise:**
 I work closely with you until you're completely satisfied. Most clients need just 1-2 rounds!`,
-            quickReplies: ['💰 Pricing Details', '📞 Contact Me', '🔧 Custom Project', '⏱️ Timeline']
+            quickReplies: ['💰 Pricing Details', '📞 Contact Me', '🔧 Custom Project', '⏱️ Timeline'],
+            quickRepliesUrdu: ['💰 Pricing', '📞 Rabta Karein', '🔧 Custom Project', '⏱️ Waqt']
         },
 
         consultation: {
@@ -959,12 +1017,14 @@ I work closely with you until you're completely satisfied. Most clients need jus
 Or just tell me about your project right here and I'll give you initial guidance!
 
 No pressure, no obligation - just a friendly chat! 😊`,
-            quickReplies: ['📱 WhatsApp Now', '📧 Email Me', '💬 Tell Me About Project', '💰 View Pricing']
+            quickReplies: ['📱 WhatsApp Now', '📧 Email Me', '💬 Tell Me About Project', '💰 View Pricing'],
+            quickRepliesUrdu: ['📱 WhatsApp Karein', '📧 Email Karein', '💬 Project Batayein', '💰 Pricing']
         },
 
         // === GREETINGS & SMALL TALK ===
         greeting: {
-            keywords: ['hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'assalam', 'salam', 'aoa', 'greetings', 'howdy'],
+            keywords: ['hello', 'hi', 'hey', 'good morning', 'good evening', 'good afternoon', 'assalam', 'aoa', 'greetings', 'howdy'],
+            keywordsUrdu: ['kya haal', 'kaise ho', 'salaam', 'salam'],
             response: `Assalam u Alaikum! 👋 Welcome to Noman's Chatbot Services!
 
 I'm an AI assistant here to help you learn about:
@@ -974,11 +1034,21 @@ I'm an AI assistant here to help you learn about:
 🚀 Fast delivery
 
 What brings you here today?`,
-            quickReplies: ['🔧 View Services', '💰 Pricing', '📂 Portfolio', '💬 Start Project']
+            responseUrdu: `Walaikum Assalam! 👋 Noman ki Chatbot Services mein khushamdeed!
+
+Main aik AI assistant hoon aur apki madad kar sakta hoon:
+🤖 Custom chatbots bananay mein
+💰 Pricing janne mein ($39 se shuru)
+📱 WhatsApp bots ke liye
+
+Bataiye main apki kya madad karun?`,
+            quickReplies: ['🔧 View Services', '💰 Pricing', '📂 Portfolio', '💬 Start Project'],
+            quickRepliesUrdu: ['🔧 Services Dekhein', '💰 Pricing', '📂 Portfolio', '💬 Project Start']
         },
 
         thanks: {
             keywords: ['thank', 'thanks', 'appreciate', 'grateful', 'thx', 'ty', 'cheers'],
+            keywordsUrdu: ['shukriya', 'meherbani', 'jazakallah', 'bohot shukriya'],
             response: `You're very welcome! 😊
 
 I'm glad I could help! If you have any more questions, just ask.
@@ -988,11 +1058,20 @@ I'm glad I could help! If you have any more questions, just ask.
 💬 WhatsApp: +92 310 2824072
 
 Looking forward to building something amazing together! 🚀`,
-            quickReplies: ['📞 Contact Noman', '💬 More Questions', '📂 View Portfolio', '🏠 Main Menu']
+            responseUrdu: `Koi baat nahi! 😊
+
+Agar koi aur sawal ho to zaroor puchein.
+
+**Kaam shuru karein?**
+📧 Email: nomijoiya84@gmail.com
+💬 WhatsApp: +92 310 2824072`,
+            quickReplies: ['📞 Contact Noman', '💬 More Questions', '📂 View Portfolio', '🏠 Main Menu'],
+            quickRepliesUrdu: ['📞 Contact Noman', '💬 Aur Sawal', '📂 Portfolio', '🏠 Main Menu']
         },
 
         goodbye: {
             keywords: ['bye', 'goodbye', 'see you', 'later', 'good night', 'cya', 'bbye', 'take care'],
+            keywordsUrdu: ['allah hafiz', 'khuda hafiz', 'chalta hoon'],
             response: `Goodbye! 👋 Thanks for chatting!
 
 **Before you go:**
@@ -1002,11 +1081,19 @@ Looking forward to building something amazing together! 🚀`,
 Feel free to return anytime - I'm always here to help!
 
 Take care and have a great day! 🌟`,
-            quickReplies: ['📱 WhatsApp Now', '📧 Email Me', '🏠 Main Menu']
+            responseUrdu: `Allah Hafiz! 👋 Baat kar ke acha laga!
+
+**Jate jate ye note karlein:**
+📱 WhatsApp: +92 310 2824072
+📧 Email: nomijoiya84@gmail.com
+
+Apna khayal rakhiyega! 🌟`,
+            quickReplies: ['📱 WhatsApp Now', '📧 Email Me', '🏠 Main Menu'],
+            quickRepliesUrdu: ['📱 WhatsApp Karein', '📧 Email Karein', '🏠 Main Menu']
         },
 
         positive: {
-            keywords: ['great', 'awesome', 'perfect', 'excellent', 'amazing', 'wonderful', 'cool', 'nice', 'good', 'love', 'fantastic'],
+            keywords: ['great', 'awesome', 'perfect', 'excellent', 'amazing', 'wonderful', 'cool', 'nice', 'good', 'love', 'fantastic', 'zabardast', 'acha hai', 'bohot acha', 'behtareen', 'kamaal', 'khoob'],
             response: `I'm so happy to hear that! 🎉
 
 Anything else you'd like to know about my chatbot services?
@@ -1017,18 +1104,20 @@ Anything else you'd like to know about my chatbot services?
 • 🛡️ Support included
 
 Ready to start your project?`,
-            quickReplies: ['📞 Start Project', '💰 View Pricing', '📂 See Portfolio', '💬 More Questions']
+            quickReplies: ['📞 Start Project', '💰 View Pricing', '📂 See Portfolio', '💬 More Questions'],
+            quickRepliesUrdu: ['📞 Project Shuru', '💰 Pricing', '📂 Portfolio', '💬 Aur Sawal']
         },
 
         // === MISC & DEFAULT ===
         name: {
-            keywords: ['my name', 'i am', 'im', 'i\'m', 'call me', 'name is'],
+            keywords: ['my name', 'i am', 'im', 'i\'m', 'call me', 'name is', 'mera naam', 'naam hai', 'mujhe bulao'],
             response: `Nice to meet you! 😊
 
 I'll remember that! How can I help you today?
 
 Are you looking for a chatbot for your business? I'd love to learn more about your needs!`,
-            quickReplies: ['🔧 View Services', '💰 Pricing', '📂 Portfolio', '💬 Start Project']
+            quickReplies: ['🔧 View Services', '💰 Pricing', '📂 Portfolio', '💬 Start Project'],
+            quickRepliesUrdu: ['🔧 Services', '💰 Pricing', '📂 Portfolio', '💬 Project Shuru']
         },
 
         urgent: {
@@ -1047,7 +1136,8 @@ Contact me NOW and we can discuss your timeline:
 📧 Email: nomijoiya84@gmail.com
 
 I'll prioritize your project! 🎯`,
-            quickReplies: ['📱 WhatsApp NOW', '📧 Email Urgently', '💰 Rush Pricing', '⏱️ Regular Timeline']
+            quickReplies: ['📱 WhatsApp NOW', '📧 Email Urgently', '💰 Rush Pricing', '⏱️ Regular Timeline'],
+            quickRepliesUrdu: ['📱 WhatsApp Abhi', '📧 Email Jaldi', '💰 Rush Price', '⏱️ Aam Waqt']
         },
 
         custom: {
@@ -1066,7 +1156,8 @@ Every business is unique, and your chatbot should be too!
 Tell me more about your specific requirements, and I'll create a tailored solution just for you!
 
 What industry are you in?`,
-            quickReplies: ['🛒 E-commerce', '🏥 Healthcare', '🏠 Real Estate', '🍕 Restaurant', '📞 Other']
+            quickReplies: ['🛒 E-commerce', '🏥 Healthcare', '🏠 Real Estate', '🍕 Restaurant', '📞 Other'],
+            quickRepliesUrdu: ['🛒 E-commerce', '🏥 Healthcare', '🏠 Real Estate', '🍕 Restaurant', '📞 Aur']
         },
 
         language: {
@@ -1087,7 +1178,24 @@ What industry are you in?`,
 • Cultural nuances considered
 
 Need a bot in multiple languages? No problem!`,
-            quickReplies: ['💰 Multilingual Pricing', '📞 Discuss Languages', '🔧 Custom Solution', '📂 Portfolio']
+            responseUrdu: `Ji haan! Main kai zubanon mein chatbots bana sakta hoon! 🌍
+
+**Jin Zubanon Ke Liye Maine Banaye Hain:**
+• 🇬🇧 English
+• 🇵🇰 Urdu
+• 🇸🇦 Arabic
+• 🇪🇸 Spanish
+• 🇫🇷 French
+• Aur bhi!
+
+**Khususiyat:**
+• Auto zuban ki pehchan
+• Asan zuban tabdeeli
+• Saqafati barikiyon ka khayal
+
+Kai zubanon mein bot chahiye? Koi masla nahi!`,
+            quickReplies: ['💰 Multilingual Pricing', '📞 Discuss Languages', '🔧 Custom Solution', '📂 Portfolio'],
+            quickRepliesUrdu: ['💰 Pricing', '📞 Baat Karein', '🔧 Custom Kaam', '📂 Portfolio']
         }
     };
 
@@ -1142,22 +1250,35 @@ Need a bot in multiple languages? No problem!`,
         const lowerMessage = message.toLowerCase();
         let bestMatch = null;
         let highestScore = 0;
+        let detectedLang = 'en';
 
         for (let [key, data] of Object.entries(knowledgeBase)) {
             let score = 0;
+            let currentLang = 'en';
 
+            // Check English keywords
             for (let keyword of data.keywords) {
-                // Exact match (highest weight)
                 if (lowerMessage.includes(keyword)) {
                     score += 10;
-                }
-                // Fuzzy match (lower weight)
-                else if (fuzzyMatch(lowerMessage, keyword)) {
+                } else if (fuzzyMatch(lowerMessage, keyword)) {
                     score += 5;
                 }
             }
 
-            // Context bonus - if user asks about something related to last topic
+            // Check Urdu keywords
+            if (data.keywordsUrdu) {
+                for (let keyword of data.keywordsUrdu) {
+                    if (lowerMessage.includes(keyword)) {
+                        score += 10;
+                        currentLang = 'ur';
+                    } else if (fuzzyMatch(lowerMessage, keyword)) {
+                        score += 5;
+                        currentLang = 'ur';
+                    }
+                }
+            }
+
+            // Context bonus
             if (context.lastTopic === key) {
                 score += 3;
             }
@@ -1165,10 +1286,11 @@ Need a bot in multiple languages? No problem!`,
             if (score > highestScore) {
                 highestScore = score;
                 bestMatch = key;
+                detectedLang = currentLang;
             }
         }
 
-        return highestScore >= 5 ? bestMatch : null;
+        return highestScore >= 5 ? { topic: bestMatch, lang: detectedLang } : null;
     }
 
     // ========== EXTRACT USER NAME ==========
@@ -1337,14 +1459,26 @@ Need a bot in multiple languages? No problem!`,
         }
 
         // Find best matching response
-        const matchedTopic = findBestMatch(message);
+        const match = findBestMatch(message);
 
-        if (matchedTopic) {
-            context.lastTopic = matchedTopic;
-            if (!context.topicsDiscussed.includes(matchedTopic)) {
-                context.topicsDiscussed.push(matchedTopic);
+        if (match) {
+            context.lastTopic = match.topic;
+
+            // Logic to persist Urdu language if already set
+            if (match.lang === 'ur') {
+                context.language = 'ur';
+            } else if (context.language === 'ur' && match.lang === 'en') {
+                // Keep Urdu if previously spoken, even if current match is English
+                // This handles mixed language usage like "Pricing kya hai" -> "Portfolio"
+                context.language = 'ur';
+            } else {
+                context.language = 'en';
             }
-            respondWithTopic(matchedTopic);
+
+            if (!context.topicsDiscussed.includes(match.topic)) {
+                context.topicsDiscussed.push(match.topic);
+            }
+            respondWithTopic(match.topic, context.language);
         } else {
             // Default response
             respondWithDefault();
@@ -1352,18 +1486,27 @@ Need a bot in multiple languages? No problem!`,
     }
 
     // ========== RESPOND WITH MATCHED TOPIC ==========
-    function respondWithTopic(topic) {
+    function respondWithTopic(topic, lang = 'en') {
         const data = knowledgeBase[topic];
+
+        // Final fallback: if lang is 'ur' but no Urdu response exists, fallback to English
+        // But since we added Urdu to all, this should be fine. 
+        // Just in case, we can check.
+        let responseText = (lang === 'ur' && data.responseUrdu) ? data.responseUrdu : data.response;
+        // If meant to be Urdu but missing, use English
+        if (!responseText) responseText = data.response;
+
         showTypingIndicator();
 
         setTimeout(() => {
             removeTypingIndicator();
 
-            let response = data.response;
+            let response = responseText;
 
-            // Personalize with name if available - only replace greeting-style exclamations
+            // Personalize with name if available
             if (context.userName && Math.random() > 0.5) {
                 // Match patterns like "Hello!", "Welcome!", "Hi!" etc. at the start
+                // Adjust regex to also support Urdu greetings if needed, but basic one works for punctuation
                 const greetingPattern = /^([^!]+)(!)(?=\s|\n|$)/;
                 if (greetingPattern.test(response)) {
                     response = response.replace(greetingPattern, `$1, ${context.userName}$2`);
@@ -1386,9 +1529,10 @@ Need a bot in multiple languages? No problem!`,
             saveContext();
 
             // Add contextual quick replies
-            if (data.quickReplies) {
+            const replies = (lang === 'ur' && data.quickRepliesUrdu) ? data.quickRepliesUrdu : data.quickReplies;
+            if (replies) {
                 setTimeout(() => {
-                    addQuickReplies(data.quickReplies);
+                    addQuickReplies(replies);
                 }, 300);
             }
         }, 800 + Math.random() * 600);
@@ -1401,6 +1545,9 @@ Need a bot in multiple languages? No problem!`,
         setTimeout(() => {
             removeTypingIndicator();
 
+            // Check if context was previously Urdu, if so, prefer Urdu default
+            const isUrdu = context.language === 'ur';
+
             const defaultResponses = [
                 `I'm not quite sure I understand, but I'm here to help! ${context.userName ? context.userName + ', ' : ''}Let me guide you:
 
@@ -1409,7 +1556,8 @@ Need a bot in multiple languages? No problem!`,
 📱 **WhatsApp Bots** - Automate your business messaging
 📂 **Portfolio** - See my successful projects
 
-What would you like to know more about?`,
+What would you like to know more about?
+(Ap Roman Urdu mein bhi sawal kar sakte hain!)`,
 
                 `Hmm, could you tell me more about what you're looking for? ${context.userName ? 'Hi ' + context.userName + ', ' : ''}I can help with:
 
@@ -1418,19 +1566,30 @@ What would you like to know more about?`,
 • E-commerce & healthcare bots 🛒🏥
 • Pricing & project timelines 💰⏱️
 
-Just ask about any of these!`,
-
-                `I want to make sure I help you correctly! ${context.userName ? context.userName + ', ' : ''}Try asking me about:
-
-🤖 "What services do you offer?"
-💰 "How much does a chatbot cost?"
-📱 "Tell me about WhatsApp bots"
-⏱️ "How long does it take?"
-
-Or tell me about your project idea! 💡`
+Just ask about any of these!
+(Main Roman Urdu bhi samajhta hoon!)`,
             ];
 
-            const response = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+            const defaultResponsesUrdu = [
+                `Mujhe samajh nahi aya, lekin main apki madad kar sakta hoon! ${context.userName ? context.userName + ', ' : ''} 👇
+
+🔧 **Services** - Chatbot solutions
+💰 **Pricing** - $39 se shuru
+📱 **WhatsApp Bots** - Business automation
+
+Ap kya janna chahte hain?`,
+
+                `Maaf kijiye ga samajh nahi aya. ${context.userName ? 'Ji ' + context.userName + ', ' : ''} Main in cheezon mein madad kar sakta hoon:
+
+• Custom Chatbots 🤖
+• WhatsApp Business 📱
+• Pricing aur Rates 💰
+
+Ap sawal dobara pooch lein!`
+            ];
+
+            const pool = isUrdu ? defaultResponsesUrdu : defaultResponses;
+            const response = pool[Math.floor(Math.random() * pool.length)];
 
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message bot';
@@ -1448,8 +1607,9 @@ Or tell me about your project idea! 💡`
             saveContext();
 
             // Add helpful quick replies
+            const replies = isUrdu ? ['🔧 Services', '💰 Pricing', '📱 WhatsApp Bot'] : ['🔧 Services', '💰 Pricing', '📱 WhatsApp Bot', '📞 Contact'];
             setTimeout(() => {
-                addQuickReplies(['🔧 Services', '💰 Pricing', '📱 WhatsApp Bot', '📞 Contact']);
+                addQuickReplies(replies);
             }, 300);
         }, 800 + Math.random() * 400);
     }
